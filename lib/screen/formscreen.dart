@@ -14,7 +14,8 @@ class _FormScreenState extends State<FormScreen> {
   Student myStudent = Student();
   //เตรียม firebase
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
-  CollectionReference _studentCollection = FirebaseFirestore.instance.collection("students");
+  CollectionReference _studentCollection =
+      FirebaseFirestore.instance.collection("students");
 
   @override
   Widget build(BuildContext context) {
@@ -102,23 +103,25 @@ class _FormScreenState extends State<FormScreen> {
                           },
                           keyboardType: TextInputType.number,
                         ),
+                        Padding(padding: EdgeInsets.only(top: 20)),
                         SizedBox(
+                          height: 50,
                           width: double.infinity,
                           child: ElevatedButton(
                               child: Text(
                                 "บันทึกข้อมูล",
                                 style: TextStyle(fontSize: 20),
                               ),
-                              onPressed: () async{
+                              onPressed: () async {
                                 if (formKey.currentState.validate()) {
-                                   formKey.currentState.save();
-                                   await _studentCollection.add({
-                                      "fname":myStudent.fname,
-                                      "lname":myStudent.lname,
-                                      "email":myStudent.email,
-                                      "score":myStudent.score
-                                   });
-                                   formKey.currentState.reset();
+                                  formKey.currentState.save();
+                                  await _studentCollection.add({
+                                    "fname": myStudent.fname,
+                                    "lname": myStudent.lname,
+                                    "email": myStudent.email,
+                                    "score": myStudent.score
+                                  });
+                                  formKey.currentState.reset();
                                 }
                               }),
                         )

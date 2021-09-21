@@ -1,5 +1,11 @@
 # flutter_firebase
 
+เป็นโปรแกรมที่ใช้ Firebase ในการกรอกข้อมูลและแสดงผล และข้อมูลจะไปเก็บใน Firebase FireStore
+![รูปภาพหน้าจอแรก](https://i.imgur.com/edWI4WD.png)
+![รูปภาพหน้าจอที่สอง](https://i.imgur.com/lhDIi8S.png)
+
+
+
 A new Flutter project.
 
 ## Getting Started
